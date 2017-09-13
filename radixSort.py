@@ -12,6 +12,7 @@ def radixSort(arr):
 			buckets[tmp % radx].append( i )
 			if maxLength and tmp > 0:
 				maxLength = False
+
 		a = 0
 		for i in range( radx ):
 			buck = buckets[i]
@@ -19,4 +20,5 @@ def radixSort(arr):
 				out[a] = j
 				a += 1
 		placement *= radx
+
 	return out
