@@ -1,2 +1,2 @@
 # sorting
-My collection of Python sorting algorithms from once upon a time. Investigation into efficent sorting of integers in the end, which doesn't require comparisons. It's on the to-do list to redo/clean this all up one day.
+My various projects on sorting in Python. Features an old, old directory (`school`) from when I was in year 10 and did an investigation into sorting algorithms, which devolved into comparison-less integer sorting. It's a mess - the rest is a Processing project in progress, hoping to get some clean, efficient sorting implementations in Python and visualise them in addition to providing command-line support.
