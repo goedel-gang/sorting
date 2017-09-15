@@ -13,6 +13,8 @@ def get_args():
                         help="range of random integers to generate")
     parser.add_argument("-p", "--print", action="store_true",
                         help="print lists (by default only correctness is printed")
+    parser.add_argument("-t", "--tests", type=int, default=1,
+                        help="number of tests to do")
     return parser.parse_args()
 
 def randlist(args):
@@ -24,3 +26,14 @@ def is_sorted(l):
         if l[i] > l[i + 1]:
             return False
     return True
+
+def main(alg):
+    args = get_args()
+    for _ in range(args.tests):
+        test = randlist(args)
+        if args.print:
+            print(test)
+        alg(test)
+        if args.print:
+            print(test)
+        print("correctness - {}".format(is_sorted(test)))

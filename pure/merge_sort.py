@@ -4,6 +4,8 @@ start and a noninclusive stop. Does lots of in-place type stuff to optimise on
 performance and allow visualisation.
 """
 
+from sort_util import *
+
 def merge(l, a_start, a_stop, b_start, b_stop):
     """
     Perform in-place merge on a list (using a temporary list to build merge.
@@ -18,7 +20,6 @@ def merge(l, a_start, a_stop, b_start, b_stop):
     tmp = []
 
     while a_count < a_stop and b_count < b_stop:
-        yield
         a_val, b_val = l[a_count], l[b_count]
         
         if a_val < b_val:
@@ -28,17 +29,10 @@ def merge(l, a_start, a_stop, b_start, b_stop):
             tmp.append(b_val)
             b_count += 1
 
-    for i in range(a_count, a_stop):
-        yield
-        tmp.append(l[i])
+    tmp.extend(l[a_count:a_stop])
+    tmp.extend(l[b_count:b_stop])
 
-    for i in range(b_count, b_stop):
-        yield
-        tmp.append(l[i])
-
-    for lindex, val in enumerate(tmp, a_start):
-        yield
-        l[lindex] = val
+    l[a_start:b_stop] = tmp
 
 def _merge_sort(l, start, stop):
     if stop - start > 1:
