@@ -1,8 +1,4 @@
-"""
-Merge sort in Python. Ranges in this program are represented as an inclusive
-start and a noninclusive stop. Does lots of in-place type stuff to optimise on
-performance and allow visualisation.
-"""
+import itertools
 
 def merge(l, a_start, a_stop, b_start, b_stop):
     """
@@ -28,11 +24,11 @@ def merge(l, a_start, a_stop, b_start, b_stop):
             tmp.append(b_val)
             b_count += 1
 
-    for i in range(a_count, a_stop):
+    for i in xrange(a_count, a_stop):
         yield
         tmp.append(l[i])
 
-    for i in range(b_count, b_stop):
+    for i in xrange(b_count, b_stop):
         yield
         tmp.append(l[i])
 
@@ -43,14 +39,11 @@ def merge(l, a_start, a_stop, b_start, b_stop):
 def _merge_sort(l, start, stop):
     if stop - start > 1:
         mid = (start + stop) // 2
-        _merge_sort(l, start, mid)
-        _merge_sort(l, mid, stop)
-        merge(l, start, mid, mid, stop)
+        return itertools.chain(_merge_sort(l, start, mid),
+                               _merge_sort(l, mid, stop),
+                               merge(l, start, mid, mid, stop))
     else:
-        pass 
+        return () 
 
 def merge_sort(l):
-    _merge_sort(l, 0, len(l))
-
-if __name__ == "__main__":
-    main(merge_sort)
+    return _merge_sort(l, 0, len(l))
