@@ -8,10 +8,12 @@ is pretty.
 from random import randrange
 
 from collections import namedtuple
+from itertools import islice
 
 from quick_sort import quick_sort
 from merge_sort import merge_sort
 from heap_sort import heap_sort
+from bitonic_sort import bitonic_sort
 from bubble_sort import bubble_sort
 from bogo_sort import bogo_sort
 
@@ -23,7 +25,7 @@ ops_f = 10
 
 def plot_data():
     loadPixels()
-    for x, y in enumerate(data):
+    for x, y in islice(enumerate(data), width):
         pixels[(height - 1 - y) * width + x] = color(recent[x] * 255, 255, 255)
     updatePixels()
 
@@ -34,6 +36,7 @@ def prep_data(alg_no):
     sorter = config.algorithm(data)
     recent = [0 for _ in xrange(config.max_x)]
     ops_f = config.ops_f
+    print()
     print("using {}".format(config.algorithm.func_name))
     print("speed {}".format(ops_f))
     print("array size is {}".format(config.max_x))
@@ -46,6 +49,7 @@ def setup():
     algs = map(SortConfig, *zip(*[(quick_sort, width, height, 10),
                                   (merge_sort, width, height, 10),
                                   (heap_sort, width, height, 10),
+                                  (bitonic_sort, 1024, height, 10),
                                   (bubble_sort, width // 2, height // 2, 40),
                                   (bogo_sort, width, height, 10)]))
     prep_data(0)
@@ -56,7 +60,8 @@ def draw():
         recent[:] = [i * COLOUR_DECAY for i in recent]
         try:
             for op in next(sorter):
-                recent[op] = 1
+                if op < width:
+                    recent[op] = 1
         except StopIteration:
             pass
     plot_data()

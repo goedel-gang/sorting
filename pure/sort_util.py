@@ -4,6 +4,7 @@ Utility functions for other command-line sorting scripts
 
 import argparse
 import random
+import sys
 
 def get_args():
     parser = argparse.ArgumentParser(description="A sorting program")
@@ -36,4 +37,6 @@ def main(alg):
         alg(test)
         if args.print:
             print(test)
-        print("correctness - {}".format(is_sorted(test)))
+        if not is_sorted(test):
+            sys.exit("unsorted")
+        print("sorted")
