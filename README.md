@@ -13,6 +13,10 @@ The slightly more esoteric bitonic sort:
 
 ![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/bitonic.png)
 
+An LSD radix sort:
+
+![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/lsd_radix.png)
+
 Other screenshots can be found in the `data` directory.
 
 So far it also features bubble-sort and bogosort (the former is miniaturised and sped up and still takes forever to complete - the second just takes forever to complete), in addition to some of the other standard ones. I'm only doing algorithms than can be implemented somewhat in place without too much trickery, as this allows the visualisation (merge-sort does make some auxiliary arrays but it still shows the accesses in the merging).
