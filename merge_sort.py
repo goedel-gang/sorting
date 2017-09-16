@@ -1,13 +1,6 @@
 import itertools
 
 def merge(l, a_start, a_stop, b_start, b_stop):
-    """
-    Perform in-place merge on a list (using a temporary list to build merge.
-    Takes start and stop parameters for the two segments to merge. Tries not to
-    be too concise, in the interest of performance - rather than popping from
-    lists it just explicitly iterates. Apart from some of the slicing (which
-    can easily be emulated) this effectively only uses C-like functionality.
-    """
 
     a_count = a_start
     b_count = b_start

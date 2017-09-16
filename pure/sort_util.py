@@ -12,7 +12,7 @@ def get_args():
     parser.add_argument("-r", "--range", type=int, default=100,
                         help="range of random integers to generate")
     parser.add_argument("-p", "--print", action="store_true",
-                        help="print lists (by default only correctness is printed")
+                        help="print lists (by default only correctness is printed)")
     parser.add_argument("-t", "--tests", type=int, default=1,
                         help="number of tests to do")
     return parser.parse_args()

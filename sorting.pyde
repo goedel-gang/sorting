@@ -26,6 +26,10 @@ def prep_data(alg_no):
     sorter = config.algorithm(data)
     recent = [0 for _ in xrange(config.max_x)]
     ops_f = config.ops_f
+    print("using {}".format(config.algorithm.func_name))
+    print("speed {}".format(ops_f))
+    print("array size is {}".format(config.max_x))
+    print("max element is {}".format(config.max_y))
 
 def setup():
     global algs
@@ -55,8 +59,9 @@ def keyPressed():
         prep_data(numv)
     elif keyCode == UP:
         ops_f *= 2
+        print("ops/frame: {}".format(ops_f))
     elif keyCode == DOWN:
         ops_f //= 2
         if not ops_f:
             ops_f = 1
-    print("ops/frame: {}".format(ops_f))
+        print("ops/frame: {}".format(ops_f))
