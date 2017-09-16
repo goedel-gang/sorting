@@ -3,7 +3,7 @@ def bubble_sort(l):
     made_swap = True
     while made_swap:
         made_swap = False
-        for i in range(sorted_start - 1):
+        for i in xrange(sorted_start - 1):
             yield i,
             if l[i] > l[i + 1]:
                 yield i, i + 1

@@ -20,7 +20,7 @@ def bitonic_merge(l, a, b, up):
 
 def bitonic_compare(l, a, b, up):
     dist = (b - a) // 2
-    for i in range(a, a + dist):  
+    for i in xrange(a, a + dist):  
         yield i, i + dist
         if (l[i] > l[i + dist]) == up:
             yield i, i + dist

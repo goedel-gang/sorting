@@ -8,13 +8,15 @@ is pretty.
 from random import randrange
 
 from collections import namedtuple
-from itertools import islice
 
 from quick_sort import quick_sort
 from merge_sort import merge_sort
 from heap_sort import heap_sort
 from bitonic_sort import bitonic_sort
+from shell_sort import shell_sort
 from bubble_sort import bubble_sort
+from selection_sort import selection_sort
+from insertion_sort import insertion_sort
 from bogo_sort import bogo_sort
 
 COLOUR_DECAY = 0.97
@@ -25,7 +27,7 @@ ops_f = 10
 
 def plot_data():
     loadPixels()
-    for x, y in islice(enumerate(data), width):
+    for x, y in enumerate(data):
         pixels[(height - 1 - y) * width + x] = color(recent[x] * 255, 255, 255)
     updatePixels()
 
@@ -50,7 +52,10 @@ def setup():
                                   (merge_sort, width, height, 10),
                                   (heap_sort, width, height, 10),
                                   (bitonic_sort, 1024, height, 10),
+                                  (shell_sort, width, height, 10),
                                   (bubble_sort, width // 2, height // 2, 40),
+                                  (selection_sort, width // 2, height // 2, 40),
+                                  (insertion_sort, width // 2, height // 2, 40),
                                   (bogo_sort, width, height, 10)]))
     prep_data(0)
 

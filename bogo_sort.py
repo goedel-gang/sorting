@@ -7,7 +7,7 @@ def shuffle(x):
         x[i], x[j] = x[j], x[i]
 
 def is_sorted(l):
-    for i in range(len(l) - 1):
+    for i in xrange(len(l) - 1):
         yield i, i + 1
         if l[i] > l[i + 1]:
             yield False
