@@ -1,9 +1,17 @@
+"""
+The processing sketch handling visualisation. It's up to the algorithm to
+provide some kind of meaningful access hotspot indication - it's not
+necessarily very accurate in complexity, but does illustrate the algorithm and
+is pretty.
+"""
+
 from random import randrange
 
 from collections import namedtuple
 
-from merge_sort import merge_sort
 from quick_sort import quick_sort
+from merge_sort import merge_sort
+from heap_sort import heap_sort
 from bubble_sort import bubble_sort
 from bogo_sort import bogo_sort
 
@@ -35,10 +43,11 @@ def setup():
     global algs
     size(1600, 800)
     colorMode(HSB, 255, 255, 255)
-    algs = [SortConfig(merge_sort, width, height, 10),
-            SortConfig(quick_sort, width, height, 10),
-            SortConfig(bubble_sort, width // 2, height // 2, 40),
-            SortConfig(bogo_sort, width, height, 10)]
+    algs = map(SortConfig, *zip(*[(quick_sort, width, height, 10),
+                                  (merge_sort, width, height, 10),
+                                  (heap_sort, width, height, 10),
+                                  (bubble_sort, width // 2, height // 2, 40),
+                                  (bogo_sort, width, height, 10)]))
     prep_data(0)
 
 def draw():

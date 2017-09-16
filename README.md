@@ -9,6 +9,10 @@ And merge-sort:
 
 ![screenshot](https://github.com/elterminad0r/sorting/blob/master/merge.png)
 
-So far it also features bubble-sort and bogosort. I'm only doing algorithms than can be implemented somewhat in place without too much trickery, as this allows the visualisation (merge-sort does make some auxiliary arrays but it still shows the accesses in the merging).
+Heapsort:
+
+![screenshot](https://github.com/elterminad0r/sorting/blob/master/heap.png)
+
+So far it also features bubble-sort and bogosort (the former is miniaturised and sped up and still takes forever to complete - the second just takes forever to complete). I'm only doing algorithms than can be implemented somewhat in place without too much trickery, as this allows the visualisation (merge-sort does make some auxiliary arrays but it still shows the accesses in the merging).
 
 It also features an old, old directory (`school`) from when I was in year 10 and did an investigation into sorting algorithms, which devolved into comparison-less integer sorting. It's a mess. 
