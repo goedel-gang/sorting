@@ -14,7 +14,7 @@ def merge(l, a_start, a_stop, b_start, b_stop):
     tmp = []
 
     while a_count < a_stop and b_count < b_stop:
-        yield
+        yield a_count, b_count
         a_val, b_val = l[a_count], l[b_count]
         
         if a_val < b_val:
@@ -25,15 +25,15 @@ def merge(l, a_start, a_stop, b_start, b_stop):
             b_count += 1
 
     for i in xrange(a_count, a_stop):
-        yield
+        yield i,
         tmp.append(l[i])
 
     for i in xrange(b_count, b_stop):
-        yield
+        yield i,
         tmp.append(l[i])
 
     for lindex, val in enumerate(tmp, a_start):
-        yield
+        yield lindex,
         l[lindex] = val
 
 def _merge_sort(l, start, stop):
