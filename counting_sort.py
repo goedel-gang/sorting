@@ -4,8 +4,8 @@ def _counting_sort(l, max_val):
         yield ind,
         count[a] += 1
     i = 0
-    for a in range(max_val):
-        for c in range(count[a]):
+    for a in xrange(max_val):
+        for c in xrange(count[a]):
             yield i,
             l[i] = a
             i += 1

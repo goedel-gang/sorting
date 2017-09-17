@@ -2,7 +2,7 @@
 The processing sketch handling visualisation. It's up to the algorithm to
 provide some kind of meaningful access hotspot indication - it's not
 necessarily very accurate in complexity, but does illustrate the algorithm and
-is pretty.
+is pretty. The more "serious" algorithms are number keys, the rest are qw...
 """
 
 from random import randrange

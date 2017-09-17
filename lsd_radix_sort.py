@@ -2,8 +2,8 @@ import itertools
 import math
 
 def _lsd_radix_sort(l, base, max_digits):
-    for power in range(max_digits):
-        bucks = [[] for i in range(base)]
+    for power in xrange(max_digits):
+        bucks = [[] for i in xrange(base)]
         for item in l:
             yield item,
             bucks[(item // base ** power) % base].append(item)
