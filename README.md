@@ -3,22 +3,24 @@ My various projects on sorting in Python. The main part is a mix of pure-Python 
 
 Here is heapsort, for example:
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/heap.png)
+![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/heap.png)
 
 Here is shellsort (a generalization of insertion sort):
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/shell.png)
+![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/shell.png)
 
 The slightly more esoteric bitonic sort:
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/bitonic.png)
+![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/bitonic.png)
 
 An appropriately named LSD radix sort:
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/lsd_radix.png)
+![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/lsd_radix.png)
 
-Other screenshots can be found in the `data` directory.
+Other screenshots can be found in the `screenshots` directory.
 
 So far it also features bubble-sort and bogosort (the former is miniaturised and sped up and still takes forever to complete - the second just takes forever to complete), in addition to some of the other standard ones. I'm only doing algorithms than can be implemented somewhat in place without too much trickery, as this allows the visualisation (merge-sort does make some auxiliary arrays but it still shows the accesses in the merging).
 
 It also features an old, old directory (`school`) from when I was in year 10 and did an investigation into sorting algorithms, which devolved into comparison-less integer sorting. It's a mess. 
+
+[Here](https://youtu.be/BaFKYvCZq1k) is a full video rendering I made of it at one point.
