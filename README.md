@@ -13,7 +13,7 @@ The slightly more esoteric bitonic sort:
 
 ![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/bitonic.png)
 
-An LSD radix sort:
+An appropriately named LSD radix sort:
 
 ![screenshot](https://github.com/elterminad0r/sorting/blob/master/data/lsd_radix.png)
 

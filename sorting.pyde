@@ -21,17 +21,22 @@ from selection_sort import selection_sort
 from insertion_sort import insertion_sort
 from bogo_sort import bogo_sort
 
-COLOUR_DECAY = 0.97
+COLOUR_DECAY = 0.99
+MAX_POINT = 10
+MIN_POINT = 1.5
 
 SortConfig = namedtuple("SortConfig", ["algorithm", "max_x", "max_y", "ops_f"])
 
 ops_f = 10
 
 def plot_data():
-    loadPixels()
+    data_len = len(data)
+    data_height = max(data)
     for x, y in enumerate(data):
-        pixels[(height - 1 - y) * width + x] = color(recent[x] * 255, 255, 255)
-    updatePixels()
+        x_val = map(x, 0, data_len, 0, width)
+        y_val = map(y, 0, data_height, 0, height)
+        fill(recent[x] * 255, 255, 255)
+        ellipse(x_val, height - y_val, *[map(recent[x], 0, 1, MIN_POINT, MAX_POINT)] * 2)
 
 def prep_data(config):
     global data, sorter, recent, ops_f
@@ -48,6 +53,7 @@ def prep_data(config):
 def setup():
     global alg_map
     size(1600, 800)
+    noStroke()
     colorMode(HSB, 255, 255, 255)
     algs = map(SortConfig, *zip(*[(quick_sort, width, height, 10),
                                   (merge_sort, width, height, 10),
