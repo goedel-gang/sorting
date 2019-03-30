@@ -24,7 +24,7 @@ from bogo_sort import bogo_sort
 COLOUR_DECAY = 0.99
 
 # Used for video creation
-CYCLE = False
+CYCLE = True
 SAVE_FRAMES = False
 
 TL_SIZE = 30

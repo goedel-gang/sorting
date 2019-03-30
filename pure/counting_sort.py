@@ -16,7 +16,7 @@ def _counting_sort(l, max_val):
             i += 1
 
 def counting_sort(l):
-	_counting_sort(l, max(l) + 1)
+    _counting_sort(l, max(l) + 1)
 
 if __name__ == "__main__":
-	main(counting_sort)
+    main(counting_sort)

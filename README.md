@@ -3,19 +3,19 @@ My various projects on sorting in Python. The main part is a mix of pure-Python 
 
 Here is heapsort, for example:
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/heap.png)
+![screenshot](https://github.com/goedel-gang/sorting/blob/master/screenshots/heap.png)
 
 Here is shellsort (a generalization of insertion sort):
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/shell.png)
+![screenshot](https://github.com/goedel-gang/sorting/blob/master/screenshots/shell.png)
 
 The slightly more esoteric bitonic sort:
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/bitonic.png)
+![screenshot](https://github.com/goedel-gang/sorting/blob/master/screenshots/bitonic.png)
 
 An appropriately named LSD radix sort:
 
-![screenshot](https://github.com/elterminad0r/sorting/blob/master/screenshots/lsd_radix.png)
+![screenshot](https://github.com/goedel-gang/sorting/blob/master/screenshots/lsd_radix.png)
 
 Other screenshots can be found in the `screenshots` directory.
 
