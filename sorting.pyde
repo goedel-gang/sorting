@@ -1,5 +1,3 @@
-# vim: ft=python
-
 """
 The processing sketch handling visualisation. It's up to the algorithm to
 provide some kind of meaningful access hotspot indication - it's not
